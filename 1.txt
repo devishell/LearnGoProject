@@ -1,0 +1,18 @@
+Hello world!
+天苍苍 野茫茫
+风吹草低见牛羊
+
+日暮苍山远，天寒白屋贫。
+柴门闻犬吠，风雪夜归人。
+
+碧玉妆成一树高，万条垂下绿丝绦。
+不知细叶谁裁出，二月春风似剪刀。
+
+我是append []byte
+我是append str
+我是 bufio append []byte
+我是 bufio append str
+我是append []byte
+我是append str
+我是 bufio append []byte
+我是 bufio append str
