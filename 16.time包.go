@@ -19,6 +19,6 @@ func main() {
 	fmt.Println(unix)
 
 	//格式化 格式化模板是golang诞生日期 20060102150405
-	fmt.Println(now.Format("2006-01-02 15:04.000")) //golang不支持静态变量 可以把定义的全局变量认为是静态变量
-	fmt.Println(now.Format("2006/1-2 15:04.999"))
+	fmt.Println(now.Format("2006-01-02 15:04:05.000")) //golang不支持静态变量 可以把定义的全局变量认为是静态变量
+	fmt.Println(now.Format("2006/1-2 15:04:05.999"))
 }

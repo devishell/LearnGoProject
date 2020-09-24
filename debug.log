@@ -1,0 +1,9 @@
+[2020-09-23 16:25:11.257] [INFO] [19.日志框架作业.go] [main.getCallerInfo] [44] desc
+[2020-09-23 16:25:46.057] [INFO] [19.日志框架作业.go] [main.getCallerInfo] [44行] desc
+[2020-09-23 16:26:40.794] [INFO] [19.日志框架作业.go] [main.getCallerInfo] [44行] desc
+[2020-09-23 16:26:52.723] [DEBUG] [19.日志框架作业.go] [main.getCallerInfo] [44行] desc
+[2020-09-23 16:50:57.280] [DEBUG] [19.日志框架作业.go] [main.getCallerInfo] [45行] desc
+[2020-09-23 16:51:44.603] [DEBUG] [19.日志框架作业.go] [main.getCallerInfo] [46行] desc
+[2020-09-23 16:52:24.676] [DEBUG] [19.日志框架作业.go] [main.getCallerInfo] [46行] desc
+[2020-09-23 16:57:46.472] [DEBUG] [19.日志框架作业.go] [main.getCallerInfo] [57行] desc
+[2020-09-23 17:04:58.496] [DEBUG] [19.日志框架作业.go] [main.getCallerInfo] [57行] desc

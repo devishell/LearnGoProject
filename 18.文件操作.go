@@ -31,15 +31,15 @@ func main() {
 		//	fmt.Printf("读取了%d字节,内容：\n%v\n",n,string(tmp[:]))
 		//}
 		//方法2 bufio读文件 先读到缓存里
-		reader:= bufio.NewReader(file)
+		reader := bufio.NewReader(file)
 		for {
-			str,err3 := reader.ReadString('\n') //分行读取
+			str, err3 := reader.ReadString('\n') //分行读取
 			if err3 == io.EOF {
-				fmt.Print(str,"\n")
+				fmt.Print(str, "\n")
 				break
 			}
-			if err3!=nil {
-				fmt.Print("读取出错：",err3)
+			if err3 != nil {
+				fmt.Print("读取出错：", err3)
 				break
 			}
 			fmt.Print(str)
@@ -47,28 +47,28 @@ func main() {
 	}
 	//读文件方法3 调用ioutil
 	fmt.Println("---------调用ioutil读取---------")
-	bytes,err4:=ioutil.ReadFile("1.txt")
+	bytes, err4 := ioutil.ReadFile("1.txt")
 	if err4 != nil {
-		fmt.Println("读取出错:",err4)
-	}else {
+		fmt.Println("读取出错:", err4)
+	} else {
 		fmt.Println(string(bytes))
 	}
 
 	//写文件
 	//以指定模式打开文件 返回操作的文件指针 perm文件权限,八进制数 r读04 w写02 x执行01
-	file,err = os.OpenFile("1.txt",os.O_WRONLY|os.O_CREATE|os.O_APPEND,0666)
-	if  err!=nil{
-		fmt.Println("打开文件出错：",err)
-	}else {
+	file, err = os.OpenFile("1.txt", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0666)
+	if err != nil {
+		fmt.Println("打开文件出错：", err)
+	} else {
 		defer file.Close()
 		//写文件方法1
 		file.Write([]byte("我是append []byte\n"))
 		file.WriteString("我是append str\n") //执行后查看一下文件
 		//写文件方法2 bufio
-		writer:=bufio.NewWriter(file)
+		writer := bufio.NewWriter(file)
 		writer.Write([]byte("我是 bufio append []byte\n"))
 		writer.WriteString("我是 bufio append str\n")
-		writer.Flush()//必须执行才能写入文件
+		writer.Flush() //必须执行才能写入文件
 	}
 	//写文件方法3
 	//ioutil.WriteFile("2.txt",[]byte("我是append []byte\n"),0755)
@@ -76,9 +76,8 @@ func main() {
 	//拷贝文件 1.读打开src 2.写打开des 3.io.copy(des,src)
 	//io.Copy()
 
-
-
-
-
+	//权限为什么有三个7呢？“三”是指三种不同的对象，User，Gourp，Other。即文件所有人，文件所有组，和其他人。4+2+1=7
+	//644 自己可读写 其他人只读
+	//7 可读可写可执行 , 6 , 5可读可执行, 4
 
 }
