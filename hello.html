@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+    {{/*移动端兼容*/}}
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="网页搜索到后的简介">
+    <meta name="keywords" content="seo优化的关键词">
+</head>
+<body>
+<b>加粗</b>
+<i>斜体</i>
+<u>下划线</u>
+<s>删除</s>
+<p>段落</p>
+<h3>标题</h3>
+<!--换行-->
+<br/>
+<!-- 水平线-->
+<hr>
+<p>&nbsp;a&lt;b&copy;&reg;</p>
+<p>
+    {{/*不能放div块级标签*/}}
+</p>
+<table>
+    <thead>
+    <tr>
+        <th>1</th>
+        <th>2</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>2</td>
+    </tr>
+    </tbody>
+</table>
+<form action="index" method="post">
+    <div>
+        <label>用户名：</label>
+        <input type="text" name="name" value="default">
+    </div>
+    <div>
+        <label>密码：
+            <input type="password" name="pwd">
+        </label>
+    </div>
+    <div>
+        <label>性别</label>
+        <input type="radio" name="gender" value="male">男
+        <input type="radio" name="gender" value="female">女
+    </div>
+    <div>
+        <label>爱好</label>
+        <input type="checkbox" value="football">足球
+        <input type="checkbox" value="basketball">篮球
+    </div>
+    <div>
+        <label>选择头像</label>
+        <input type="file" accept="image/*" name="avatar">
+    </div>
+    <div>
+        <label>个性签名</label>
+        <textarea name="info" cols="30" rows="10">
+
+        </textarea>
+    </div>
+    <div>
+        <label>地址</label>
+        <select>
+            <option>1</option>
+            <option>2</option>
+        </select>
+    </div>
+    <div>
+        <label>按钮</label>
+        <input type="submit" value="submit">
+        <button type="submit">提交</button>
+        <button type="reset">重置</button>
+        <button type="button">按钮</button>
+    </div>
+</form>
+<form action="https://www.sogou.com/web" method="get">
+    <div>
+        <input type="search" name="query">
+        <input type="submit" value="搜索">
+    </div>
+</form>
+<form action="web" method="get">
+    <div>
+        <input type="search" name="query">
+        <input type="submit" value="搜索">
+    </div>
+</form>
+</body>
+</html>
