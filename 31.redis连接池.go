@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
-	//安装redis: %brew install redis 启动redis服务端% redis-server 服务端口6379
-	//ting@TingdeMacBook-Pro LearnGoProject % go get github.com/gomodule/redigo/redis
+	//1.安装redis: %brew install redis //3.启动redis服务端% redis-server 服务端口6379
+	//2.ting@TingdeMacBook-Pro LearnGoProject % go get github.com/gomodule/redigo/redis
 	pool:=&redis.Pool{
 		MaxIdle: 16,
 		MaxActive: 0,

@@ -58,15 +58,15 @@ func main() {
 }
 
 var (
-	userName  string = "root"
-	password  string = "123456"
-	ipAddrees string = "localhost"
-	port      int    = 3306
-	dbName    string = "testdb"
-	charset   string = "utf8"
+	userName  = "root"
+	password  = "123456"
+	ipAddrees = "localhost"
+	port      = 3306
+	dbName    = "testdb"
+	charset   = "utf8"
 )
 
 func connectMysql() (*sqlx.DB, error) {
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=%s", userName, password, ipAddrees, port, dbName, charset)
-	return sqlx.Open("mysql", dsn)
+	return sqlx.Open("mysql", dsn) //执行db的方法时候才会真正从连接池中建立获取连接
 }

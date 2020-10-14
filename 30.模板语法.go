@@ -12,13 +12,13 @@ func main() {
 	//文档查看 https://studygolang.com/pkgdoc net->template
 
 	//
-	http.HandleFunc("/template1.html", template1) // http://127.0.0.1:9092/template1.html
+	http.HandleFunc("/index.html", template1) // http://127.0.0.1:9092/template1.html
 	http.ListenAndServe("127.0.0.1:9092", nil)
 
 }
 
 func template1(writer http.ResponseWriter, request *http.Request) {
-	template1, err2 := ioutil.ReadFile("template1.html")
+	template1, err2 := ioutil.ReadFile("index.html")
 	if err2 != nil {
 		fmt.Println(err2)
 		return
@@ -28,7 +28,7 @@ func template1(writer http.ResponseWriter, request *http.Request) {
 		return arg+"真帅",nil
 	}
 	files, err :=template.New("template1").Funcs(template.FuncMap{"kua":kuaFunc}).Parse(string(template1))
-	//files, err := template.ParseFiles("template1.html")	//直接打开模板 不能在添加函数
+	//files, err := template.ParseFiles("index.html")	//直接打开模板 不能在添加函数
 	if err != nil {
 		fmt.Println(err)
 		return

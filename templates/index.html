@@ -1,0 +1,34 @@
+{{/*{{define "/home/index.html"}}*/}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template1</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="网页搜索到后的简介">
+    <meta name="keywords" content="seo优化的关键词">
+</head>
+<body>
+<p>
+    名称：{{.Name}}
+</p>
+<p>
+    年龄：{{.Age}}
+</p>
+{{/*模板中的注释 模板不支持普通的html注释*/}}
+{{$user:=.}}
+{{$user.Age}}
+<hr/>
+{{if gt .Age 18}}
+<div>大于18做的事情</div>
+{{else}}
+<div>小于18做的事情</div>
+{{end}}
+{{printf "name = %s" .Name}}<br/>
+name长度：{{len .Name }}<br/>
+{{/*{{with .Name}}*/}}
+{{/*    {{kua .}}<br/>*/}}
+{{/*{{end}}*/}}
+</body>
+</html>
+{{/*{{end}}*/}}
