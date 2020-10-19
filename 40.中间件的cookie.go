@@ -54,7 +54,18 @@ func main() {
 			return
 		}
 	})
-	r.GET("/vip", addCookieMiddleware, vipHandler) //访问vip之前先进行cookie判断 且可以保存数据到上下文传递数据
+	r.GET("/vip", addCookieMiddleware, func(c *gin.Context) {
+		temu, exists := c.Get("username")
+		if exists {
+			s := temu.(string)
+			c.HTML(http.StatusOK, "vip.html", gin.H{
+				"username": s,
+			})
+		} else {
+			//跳转时加上原页面的参数而不是直接跳转
+			c.Redirect(http.StatusMovedPermanently, "/login?next="+c.Request.URL.Path)
+		}
+	}) //访问vip之前先进行cookie判断 且可以保存数据到上下文传递数据
 	r.Run(":9094")
 }
 
@@ -67,17 +78,4 @@ func addCookieMiddleware(c *gin.Context) {
 		c.Redirect(http.StatusMovedPermanently, "/login?next="+c.Request.URL.Path)
 		return
 	}
-}
-func vipHandler(c *gin.Context) {
-	temu, exists := c.Get("username")
-	if exists {
-		s := temu.(string)
-		c.HTML(http.StatusOK, "vip.html", gin.H{
-			"username": s,
-		})
-	} else {
-		//跳转时加上原页面的参数而不是直接跳转
-		c.Redirect(http.StatusMovedPermanently, "/login?next="+c.Request.URL.Path)
-	}
-
 }
